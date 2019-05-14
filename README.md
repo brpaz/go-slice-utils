@@ -3,7 +3,7 @@
 > A small package that contains common used functions for dealing with slices in go.
 
 [![CircleCI](https://img.shields.io/circleci/project/brpaz/gp-slice-utils.svg?style=for-the-badge)](https://circleci.com/gh/brpaz/go-slice-utils)
-[[![Code Climate](https://img.shields.io/codeclimate/github/brpaz/go-slice-utils.svg?style=for-the-badge)](https://codeclimate.com/brpaz/go-slice-utils)](https://img.shields.io/codeclimate/maintainability/brpaz/go-slice-utils.svg?style=for-the-badge)
+[![Code Climate](https://img.shields.io/codeclimate/github/brpaz/go-slice-utils.svg?style=for-the-badge)](https://codeclimate.com/brpaz/go-slice-utils)
 ![LICENSE](https://img.shields.io/github/license/brpaz/go-slice-utils.svg?style=for-the-badge)
 
 **This is work in progress. use it at your own risk**
