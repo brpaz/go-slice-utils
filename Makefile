@@ -14,3 +14,6 @@ format: ## Run Unit tests
 
 test: ## Run Unit tests
 	go test -v ./...
+
+test-cover: ## Run tests with test coverage
+	go test -v ./... -cover	-coverprofile=cover.out

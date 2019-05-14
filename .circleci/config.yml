@@ -20,13 +20,21 @@ jobs:
           keys:
             - go-mod-v1-{{ checksum "go.sum" }}
 
-      - run: go get github.com/jstemmer/go-junit-report
+      - run:
+          name: Setup Test Dependencies
+          command: |
+            go get github.com/jstemmer/go-junit-report
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
 
       - run:
           name: Run unit tests
           command: |
+           ./cc-test-reporter before-build
+
             trap "go-junit-report <${TEST_RESULTS}/go-test.out > ${TEST_RESULTS}/go-test-report.xml" EXIT
-            make test | tee ${TEST_RESULTS}/go-test.out
+            make test-cover | tee ${TEST_RESULTS}/go-test.out
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
 
       - save_cache:
           key: go-mod-v1-{{ checksum "go.sum" }}
