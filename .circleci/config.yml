@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    docker: #
+    docker:
       - image: circleci/golang:1.12
         environment:
           GO111MODULE: "on"
@@ -39,3 +39,21 @@ jobs:
 
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: /tmp/test-results
+    release:
+        docker:
+        - image: goreleaser/goreleaser
+        steps:
+        - checkout
+        - run: goreleaser --rm-dist --release-notes CHANGELOG.md
+
+workflows:
+  version: 2
+  build_release:
+    jobs:
+      - build
+      - release:
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/

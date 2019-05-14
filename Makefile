@@ -9,5 +9,8 @@
 help: ## Show Help
     grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+format: ## Run Unit tests
+	@gofmt -l -w .
+
 test: ## Run Unit tests
 	go test -v ./...
