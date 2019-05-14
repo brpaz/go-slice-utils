@@ -1,7 +1,7 @@
 -   repo: local
     hooks:
     -   id: format
-        name: format
+        name: Go format
         entry: make format
         language: system
         types: [go]

@@ -34,7 +34,7 @@ jobs:
 
             trap "go-junit-report <${TEST_RESULTS}/go-test.out > ${TEST_RESULTS}/go-test-report.xml" EXIT
             make test-cover | tee ${TEST_RESULTS}/go-test.out
-            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
+            ./cc-test-reporter after-build --input-type cover --exit-code $?
 
       - save_cache:
           key: go-mod-v1-{{ checksum "go.sum" }}
