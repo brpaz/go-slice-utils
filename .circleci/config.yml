@@ -63,6 +63,6 @@ workflows:
       - release:
           filters:
             tags:
-              only: /^v.*/
+              only: /^V.*/
             branches:
               ignore: /.*/
