@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Run unit tests
           command: |
-           ./cc-test-reporter before-build
+            ./cc-test-reporter before-build
 
             trap "go-junit-report <${TEST_RESULTS}/go-test.out > ${TEST_RESULTS}/go-test-report.xml" EXIT
             make test-cover | tee ${TEST_RESULTS}/go-test.out
@@ -63,6 +63,6 @@ workflows:
       - release:
           filters:
             tags:
-              only: /^v.*/
+              only: /^V.*/
             branches:
               ignore: /.*/
