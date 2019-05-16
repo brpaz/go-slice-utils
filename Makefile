@@ -17,3 +17,10 @@ test: ## Run Unit tests
 
 test-cover: ## Run tests with test coverage
 	go test -v ./... -cover	-coverprofile=cover.out
+
+test-cover-html: test-cover ## Runs test coverage and export result to htmml
+	go tool cover -html=cover.out
+
+release: ## Creates a new release
+	git tag $(TAG)
+	git push --tags
