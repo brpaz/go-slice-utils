@@ -3,19 +3,21 @@
 > A small package that contains common used functions for dealing with slices in go.
 
 [![CircleCI](https://img.shields.io/circleci/project/brpaz/go-slice-utils.svg?style=for-the-badge)](https://circleci.com/gh/brpaz/go-slice-utils)
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/brpaz/go-slice-utils.svg?style=for-the-badge)](https://codeclimate.com/brpaz/go-slice-utils)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/brpaz/go-slice-utils.svg?style=for-the-badge)](https://codeclimate.com/github/brpaz/go-slice-utils)
+[![Code Climate coverage](https://img.shields.io/codeclimate/coverage/brpaz/go-slice-utils.svg?style=for-the-badge)](https://codeclimate.com/github/brpaz/go-slice-utils/progress/coverage)
 ![LICENSE](https://img.shields.io/github/license/brpaz/go-slice-utils.svg?style=for-the-badge)
-
-**This is work in progress. use it at your own risk**
 
 ## Functions
 
-* Contains - Checks if a slice contains a particular element.
-* ContainsBool
-* ContainsString
-* ContainsInt
+* Contains - Checks if a slice contains a particular element. Specific types variants are supported. Ex: ContainsString, ContainsInt etc
 
 ...
+
+## Install
+
+```
+go get -u github.com/brpaz/go-slice-utils/slice
+```
 
 ## Usage
 
@@ -27,10 +29,22 @@ slice.ContainsString(slice, "two")
 
 ## Development
 
+
+### Getting started
+
+Make sure you have go installed and correctly configured on your machine.
+
+This project uses [pre-commit](https://pre-commit.com/) to enforce coding style guidelines. Make sure you have it installed on your project:
+
+```sh
+pip install pre-commit
+pre-commit install
+```
+
+
 ### Run tests
 
 ```make tests```
-
 
 ## License
 
